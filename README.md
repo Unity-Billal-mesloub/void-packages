@@ -150,7 +150,7 @@ proper permissions and owner/group as explained above.
 
 bubblewrap, sandboxing tool for unprivileged users that uses
 user namespaces or setuid.
-See <https://github.com/containers/bubblewrap>.
+See <https://github.com/Unity-Billal-mesloub/bubblewrap>.
 
 #### ethereal
 
