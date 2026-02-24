@@ -45,7 +45,7 @@ To get started, [fork](https://help.github.com/articles/fork-a-repo) the void-li
 
 To keep your forked repository up to date, setup the `upstream` remote to pull in new changes:
 
-    $ git remote add upstream https://github.com/void-linux/void-packages.git
+    $ git remote add upstream https://github.com/Unity-Billal-mesloub/void-packages.git
     $ git pull --rebase upstream master
 
 This can also be done with the `github-cli` tool:
@@ -65,7 +65,7 @@ To create a new branch:
 
 ### Creating a new template
 
-You can use the helper tool `xnew`, from the [xtools](https://github.com/leahneukirchen/xtools) package, to create new templates:
+You can use the helper tool `xnew`, from the [xtools](https://github.com/Unity-Billal-mesloub/xtools) package, to create new templates:
 
     $ xnew pkgname subpkg1 subpkg2 ...
 
@@ -78,7 +78,7 @@ For deeper insights on the contents of template files, please read the [manual](
 At minimum, a template update will consist of changing `version` and `checksum`, if there was an upstream version change, and/or `revision`, if a template-specific change (e.g. patch, correction, etc.) is needed.
 Other changes to the template may be needed depending on what changes the upstream has made.
 
-The checksum can be updated automatically with the `xgensum` helper from the [xtools](https://github.com/leahneukirchen/xtools) package:
+The checksum can be updated automatically with the `xgensum` helper from the [xtools](https://github.com/Unity-Billal-mesloub/xtools) package:
 
     $ xgensum -i <pkgname>
 
@@ -118,7 +118,7 @@ Your package must build successfully for at least x86, but we recommend also try
 When building for `x86_64*` or `i686`, building with the `-Q` flag or with `XBPS_CHECK_PKGS=yes` set in `etc/conf` (to run the check phase) is strongly encouraged.
 Also, new packages and updates will not be accepted unless they have been runtime tested by installing and running the package.
 
-When you've finished working on the template file, please check it with `xlint` helper from the [xtools](https://github.com/leahneukirchen/xtools) package:
+When you've finished working on the template file, please check it with `xlint` helper from the [xtools](https://github.com/Unity-Billal-mesloub/xtools) package:
 
     $ xlint template
 
@@ -126,24 +126,24 @@ If `xlint` reports any issues, resolve them before committing.
 
 Once you have made and verified your changes to the package template and/or other files, make one commit per package (including all changes to its sub-packages). Each commit message should have one of the following formats:
 
-* for new packages, use `New package: <pkgname>-<version>` ([example](https://github.com/void-linux/void-packages/commit/8ed8d41c40bf6a82cf006c7e207e05942c15bff8)).
+* for new packages, use `New package: <pkgname>-<version>` ([example](https://github.com/Unity-Billal-mesloub/void-packages/commit/8ed8d41c40bf6a82cf006c7e207e05942c15bff8)).
 
-* for package updates, use `<pkgname>: update to <version>.` ([example](https://github.com/void-linux/void-packages/commit/c92203f1d6f33026ae89f3e4c1012fb6450bbac1)).
+* for package updates, use `<pkgname>: update to <version>.` ([example](https://github.com/Unity-Billal-mesloub/void-packages/commit/c92203f1d6f33026ae89f3e4c1012fb6450bbac1)).
 
-* for template modifications without a version change, use `<pkgname>: <reason>` ([example](https://github.com/void-linux/void-packages/commit/ff39c912d412717d17232de9564f659b037e95b5)).
+* for template modifications without a version change, use `<pkgname>: <reason>` ([example](https://github.com/Unity-Billal-mesloub/void-packages/commit/ff39c912d412717d17232de9564f659b037e95b5)).
 
-* for package removals, use `<pkgname>: remove package` and include the removal reason in the commit body ([example](https://github.com/void-linux/void-packages/commit/4322f923bdf5d4e0eb36738d4f4717d72d0a0ca4)).
+* for package removals, use `<pkgname>: remove package` and include the removal reason in the commit body ([example](https://github.com/Unity-Billal-mesloub/void-packages/commit/4322f923bdf5d4e0eb36738d4f4717d72d0a0ca4)).
 
-* for changes to any other file, use `<filename>: <reason>` ([example](https://github.com/void-linux/void-packages/commit/e00bea014c36a70d60acfa1758514b0c7cb0627d),
-  [example](https://github.com/void-linux/void-packages/commit/93bf159ce10d8e474da5296e5bc98350d00c6c82), [example](https://github.com/void-linux/void-packages/commit/dc62938c67b66a7ff295eab541dc37b92fb9fb78), [example](https://github.com/void-linux/void-packages/commit/e52317e939d41090562cf8f8131a68772245bdde))
+* for changes to any other file, use `<filename>: <reason>` ([example](https://github.com/Unity-Billal-mesloub/void-packages/commit/e00bea014c36a70d60acfa1758514b0c7cb0627d),
+  [example](https://github.com/Unity-Billal-mesloub/void-packages/commit/93bf159ce10d8e474da5296e5bc98350d00c6c82), [example](https://github.com/Unity-Billal-mesloub/void-packages/commit/dc62938c67b66a7ff295eab541dc37b92fb9fb78), [example](https://github.com/Unity-Billal-mesloub/void-packages/commit/e52317e939d41090562cf8f8131a68772245bdde))
 
-If you want to describe your changes in more detail, explain in the commit body (separated from the first line with a blank line) ([example](https://github.com/void-linux/void-packages/commit/f1c45a502086ba1952f23ace9084a870ce437bc6)).
+If you want to describe your changes in more detail, explain in the commit body (separated from the first line with a blank line) ([example](https://github.com/Unity-Billal-mesloub/void-packages/commit/f1c45a502086ba1952f23ace9084a870ce437bc6)).
 
-`xbump`, available in the [xtools](https://github.com/leahneukirchen/xtools) package, can be used to commit a new or updated package:
+`xbump`, available in the [xtools](https://github.com/Unity-Billal-mesloub/xtools) package, can be used to commit a new or updated package:
 
     $ xbump <pkgname> <git commit options>
 
-`xrevbump`, also available in the [xtools](https://github.com/leahneukirchen/xtools) package, can be used to commit a template modification for a package:
+`xrevbump`, also available in the [xtools](https://github.com/Unity-Billal-mesloub/xtools) package, can be used to commit a template modification for a package:
 
     $ xrevbump '<message>' <pkgnames...>
 
@@ -211,7 +211,7 @@ all packages in the pull request for all supported platforms. Upon completion, t
 
 While it is the responsibility of the PR creator to test changes before sending it, one person can't test all configuration options, usecases, hardware, etc.
 Testing new package submissions and updates is always helpful, and is a great way to get started with contributing.
-First, [clone the repository](https://github.com/void-linux/void-packages#quick-start) if you haven't done so already.
+First, [clone the repository](https://github.com/Unity-Billal-mesloub/void-packages#quick-start) if you haven't done so already.
 Then check out the pull request, either with `github-cli`:
 
     $ gh pr checkout <number>
@@ -220,11 +220,11 @@ Or with `git`:
 
 If your local void-packages repository is cloned from your fork, you may need to add the main repository as a remote first:
 
-    $ git remote add upstream https://github.com/void-linux/void-packages.git
+    $ git remote add upstream https://github.com/Unity-Billal-mesloub/void-packages.git
 
 Then fetch and check out the PR (replacing `<remote>` with either `origin` or `upstream`):
 
     $ git fetch <remote> pull/<number>/head:<branch-name>
     $ git checkout <branch-name>
 
-Then [build and install](https://github.com/void-linux/void-packages#building-packages) the package and test its functionality.
+Then [build and install](https://github.com/Unity-Billal-mesloub/void-packages#building-packages) the package and test its functionality.
